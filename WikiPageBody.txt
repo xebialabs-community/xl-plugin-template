@@ -1,0 +1,61 @@
+<h3 id='POCSummary-POCLogisticsandScoping'><strong>POC Logistics and Scoping</strong></h3> 
+<p><strong>Team:</strong></p>
+<p></p>
+<p><strong>POC Logistics:</strong></p>
+<p></p>
+<p><strong><strong>POC Type: Remote/Onsite</strong></strong></p> 
+<p></p>
+<p><strong>Scoping Meeting (YYYY-MM-DD):</strong></p> 
+<ul><li><strong>Topic of most Interest</strong></li>
+<li><strong>etc, etc</strong></li></ul>
+<p></p> 
+<h3 id='POCSummary-POCGeneratedArtifacts'><strong>POC Generated Artifacts</strong></h3>
+<p><strong>(Links to Egnyte or Box for documents, repository.   Links to Github for code, ext folder)</strong></p> 
+<p></p>
+<h3 id='POCSummary-POCDay-to-DayDetails'><strong>POC Day-to-Day Details</strong></h3> 
+<div class='table-wrap'>     
+<table class='wrapped confluenceTable'>         
+ <tbody>
+  <tr>
+   <th class='confluenceTh'>DAY 1, mmm dd yyyy / Target set for the day</th>                 
+   <th class='confluenceTh'>Actual Achieved for the Day / Customer Reaction/Feedback:</th>             
+  </tr>
+  <tr>
+   <td class='confluenceTd'><br/></td>
+   <td class='confluenceTd'><br/></td>
+  </tr>
+  <tr>
+   <th class='confluenceTh'>DAY 2, mmm dd yyyy / Target set for the day</th>
+   <th class='confluenceTh'>Actual Achieved for the Day / Customer Reaction/Feedback:</th>
+  </tr>
+  <tr>
+   <td class='confluenceTd'><br/></td>
+   <td class='confluenceTd'><br/></td>
+  </tr>
+  <tr>
+   <th class='confluenceTh'>DAY 3, mmm ddd yyyy / Target set for the day</th>
+   <th class='confluenceTh'>Actual Achieved for the Day / Customer Reaction/Feedback:</th>
+  </tr>
+  <tr>
+   <td class='confluenceTd'><br/></td>
+   <td class='confluenceTd'><br/></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+<h3 id='POCSummary-POCWrapUp'><strong>POC Wrap Up</strong></h3>
+<p><strong>Pending Items</strong></p>
+<p><strong>High Level Summary</strong></p>
+<p><strong><br/></strong></p> 
+<h3 id='POCSummary-POSTPOCFollowup'><strong>POST POC Followup</strong></h3>
+<p><strong>Problems Encountered</strong></p>
+<p>Any issues encountered during the POC, whether it be with a technology or process.</p>
+<p><strong>Customizations</strong></p>
+<p>Append any changes you've made to synthetic.xml for plugin extensions or type-modifications.   This is helpful to other consultants.</p>
+<p><strong>Missing Functionality</strong></p>
+<p>Any functionality that was missing in deployit for the POC.   This is helpful to provide to developers for consideration for future enhancements.</p>
+<p><strong>Customer Feedback</strong></p>
+<p>How the customer reacted to the POC during, at the end, or afterwards.   This is often used to gauge the success of the POC and determines how it will move forward in the sales process.</p>
+<p><strong>Open Issues</strong></p>
+<p>Anything else that needs to be accomplished to complete this POC or to move forward in the sales cycle.</p> <p><strong>Meetings/Discussions</strong></p> 
+<p><br/></p>
