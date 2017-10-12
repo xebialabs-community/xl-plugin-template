@@ -20,7 +20,7 @@ The result is
 * a README.md file formatted with badge links and major headings of Preface, Overview, Requirements, Installation, and Usage/Features/Tasks/Types.
 * Gradle scripts and supporting files
 * a directory structure that Gradle can use to build a typical XL plugin
-* examples of the MIT License format for various file type (.ftl, .html, .java, .js, .py, .sh, .xml, etc.)
+* examples of the MIT License format for various file types (.ftl, .html, .java, .js, .py, .sh, .xml, etc.)
 
 The WikiPageBody.txt file can be pasted into the New Page Text field of the [xlr-confluence plugin](https://github.com/xebialabs-community/xlr-confluence-plugin) to generate an empty POC summary page.
 

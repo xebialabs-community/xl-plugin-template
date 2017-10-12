@@ -6,7 +6,7 @@
 #
 
 echo
-echo "Command format is ../xlcpd.sh LCPLUGINNAME SCRIPTDIRNAME WEBSCRIPTDIRNAME"
+echo "Command format is ../xl-configure-plugin-directory.sh LCPLUGINNAME SCRIPTDIRNAME WEBSCRIPTDIRNAME"
 echo
 echo "LCPLUGINNAME should be hyphenated lowercase, e.g., xl-my-demo-plugin"
 echo "SCRIPTDIRNAME should be camelcase, e.g., MyDemo"
