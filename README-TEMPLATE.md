@@ -12,11 +12,11 @@
 
 ## Preface
 
-This document describes the functionality provided by the XL Release [Description|Interface] plugin.
+This document describes the functionality provided by the XL [Deploy|Release] [Description|Interface] plugin.
 
-See the [XL Release reference manual](https://docs.xebialabs.com/xl-release) for background information on XL Release and release automation concepts.
-or
-See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.
+See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.  
+or  
+See the [XL Release reference manual](https://docs.xebialabs.com/xl-release) for background information on XL Release and release automation concepts.  
 
 ## Overview
 
@@ -25,6 +25,9 @@ See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for b
 Note:  XLD or XLR version should not be lower than lowest supported version.  See <https://support.xebialabs.com/hc/en-us/articles/115003299946-Supported-XebiaLabs-product-versions>.
 
 ## Installation
+
+* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/LCPLUGINNAME/releases) into the `XL_[DEPLOY|RELEASE]_SERVER/plugins` directory.
+* Restart the XL [Deploy|Release] server.
 
 ## Features/Usage/Types/Tasks
 
@@ -51,7 +54,7 @@ Note:  The required XL Deploy or XL Release version should not be lower than the
 * Replace last several lines with  
 
 ```
-file: build/libs/LCPLUGINNAME-1.0.0.jar
+file: build/libs/LCPLUGINNAME-1.0.0.[jar|xldp]
   skip_cleanup: true
   on:
     all_branches: true
