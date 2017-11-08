@@ -1,4 +1,4 @@
-# XL [Deploy|Release] [Description|Interface] plugin v1.0.0
+# XL Deploy|Release Description|Interface plugin v1.0.0
 
 [![Build Status][LCPLUGINNAME-travis-image]][LCPLUGINNAME-travis-url]
 [![License: MIT][LCPLUGINNAME-license-image]][LCPLUGINNAME-license-url]
@@ -12,7 +12,7 @@
 
 ## Preface
 
-This document describes the functionality provided by the XL [Deploy|Release] [Description|Interface] plugin.
+This document describes the functionality provided by the XL Deploy|Release Description|Interface plugin.
 
 See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.  
 or  
@@ -27,43 +27,8 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 ## Installation
 
 * Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/LCPLUGINNAME/releases) into the `XL_[DEPLOY|RELEASE]_SERVER/plugins` directory.
-* Restart the XL [Deploy|Release] server.
+* Restart the XL Deploy|Release server.
 
 ## Features/Usage/Types/Tasks
 
 ## References
-
-Note:  The required XL Deploy or XL Release version should not be lower than the lowest supported.  See https://support.xebialabs.com/hc/en-us/articles/115003299946-Supported-XebiaLabs-product-versions
-
-#### Image link format:
-
-![screenshot of <image description>](images/macdown-logo-160.png)
-
-#### Supported types for license text:
-
-<http://code.mycila.com/license-maven-plugin/#supported-comment-types>
-
-#### Travis configuration
-
-* After creating git repository, sync Travis with GitHub (https://travis-ci.org/profile/xebialabs-community) and enable the project by setting switch to on.
-
-* travis encrypt TRAVIS-HIPCHAT-PASSWORD --add  notifications.hipchat.rooms
-
-* travis setup releases
-
-* Replace last several lines with  
-
-```
-file: build/libs/LCPLUGINNAME-1.0.0.[jar|xldp]
-  skip_cleanup: true
-  on:
-    all_branches: true
-    tags: true
-    repo: xebialabs-community/LCPLUGINNAME
-```
-    
-    
-
-
-
-
