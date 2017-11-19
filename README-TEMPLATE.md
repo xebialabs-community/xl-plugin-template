@@ -26,9 +26,10 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 
 ## Installation
 
-* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/LCPLUGINNAME/releases) into the `XL_[DEPLOY|RELEASE]_SERVER/plugins` directory.
+* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/LCPLUGINNAME/releases) into the `XL_DEPLOY|RELEASE_SERVER/plugins` directory.
 * Restart the XL Deploy|Release server.
 
 ## Features/Usage/Types/Tasks
 
 ## References
+
