@@ -80,13 +80,21 @@ cp $XLPLUGINTEMPLATE/src/main/resources/*.xml $LCPLUGINNAME/src/main/resources
 # template.py, template.sh.ftl, template.xml
 cp $XLPLUGINTEMPLATE/src/main/resources/template/template.* $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME
 
-# Web
+# Web for XL Deploy UI extension
+mkdir -p $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/css
+mkdir -p $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/js
+cp $XLPLUGINTEMPLATE/src/main/resources/web/template-for-xld-ui-extension/index.html $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/index.html
+cp $XLPLUGINTEMPLATE/src/main/resources/web/template-for-xld-ui-extension/css/cc-fonts.css $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/css/cc-fonts.css
+cp $XLPLUGINTEMPLATE/src/main/resources/web/template-for-xld-ui-extension/css/template.css $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/css/$WEBSCRIPTDIRNAME.css
+cp $XLPLUGINTEMPLATE/src/main/resources/web/template-for-xld-ui-extension/js/template.js $LCPLUGINNAME/src/main/resources/web/$WEBSCRIPTDIRNAME/js/$WEBSCRIPTDIRNAME.js
+
+# Web for XL Release tile
 mkdir -p $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/css
 mkdir -p $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/js
-cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template/index.html $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/index.html
-cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template/css/cc-fonts.css $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/css/cc-fonts.css
-cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template/css/template.css $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/css/$WEBSCRIPTDIRNAME.css
-cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template/js/template.js $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/js/$WEBSCRIPTDIRNAME.js
+cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/index.html $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/index.html
+cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/css/cc-fonts.css $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/css/cc-fonts.css
+cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/css/template.css $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/css/$WEBSCRIPTDIRNAME.css
+cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/js/template.js $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/js/$WEBSCRIPTDIRNAME.js
 
 echo "Complete"
 echo

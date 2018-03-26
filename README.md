@@ -57,3 +57,4 @@ Note:  The required XL Deploy or XL Release version should not be lower than the
     tags: true
     repo: xebialabs-community/LCPLUGINNAME
 ```
+* See https://xebialabs-community.github.io for additional details on enabling Continuous Integration with Gradle, Nebula, and Travis.
