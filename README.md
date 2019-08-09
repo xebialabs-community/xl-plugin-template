@@ -38,7 +38,7 @@ Note:  The required XL Deploy or XL Release version should not be lower than the
 
 #### Travis configuration
 
-* After creating git repository, sync Travis with GitHub (https://travis-ci.org/profile/xebialabs-community) and enable the project by setting switch to on.
+* After creating git repository, synchronize Travis with GitHub (https://travis-ci.org/profile/xebialabs-community) and enable the project by setting switch to on.
 
 * travis encrypt TRAVIS-HIPCHAT-PASSWORD --add  notifications.hipchat.rooms
 

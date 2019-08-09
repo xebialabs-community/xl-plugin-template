@@ -3,7 +3,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
   id "com.github.hierynomus.license" version "0.14.0"
   id "com.xebialabs.xldp" version "1.0.5"
-  id 'nebula.release' version '6.0.0'
+  id 'nebula.release' version '11.0.0'
   id "com.xebialabs.xl.docker" version "1.1.0"
 }
 
@@ -18,6 +18,7 @@ repositories {
   maven {
     url 'https://dist.xebialabs.com/public/maven2'
   }
+}
 
 dependencies {
   <add maven references or file dependencies here or delete this section>
@@ -30,9 +31,9 @@ version = "1.0.0"
 
 xlDocker {
   compileImage = 'xebialabs/xlr_dev_compile'
-  compileVersion = 'v7.2.0.2'
+  compileVersion = 'v8.5.0.1'
   runImage = 'xebialabs/xlr_dev_run'
-  runVersion = 'v7.2.0.1'
+  runVersion = 'v8.5.0.1'
   runPortMapping = '15516:5516'
 }
 
