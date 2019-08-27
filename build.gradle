@@ -20,8 +20,14 @@ repositories {
   }
 }
 
+def apiVersion = "2018.6.5"
+
 dependencies {
-  <add maven references or file dependencies here or delete this section>
+  compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
+  compile "org.slf4j:slf4j-api:1.7.25"
+  compile files('/path/to/local/file1.jar',
+                '/path/to/local/file2.jar',
+                '/path/to/local/file3.jar')
 }
 
 version = "1.0.0"
