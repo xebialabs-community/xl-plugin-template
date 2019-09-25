@@ -12,6 +12,8 @@ echo "LCPLUGINNAME should be hyphenated lowercase, e.g., xl-my-demo-plugin"
 echo "SCRIPTDIRNAME should be camelcase, e.g., MyDemo"
 echo "WEBSCRIPTDIRNAME should be hyphenated lowercase, e.g., my-demo"
 echo
+echo "Or, execute without arguments and enter responses at the prompts"
+echo
 echo "Execute from your local github/xebialabs, github/xebialabs-community, or xebialabs-external directory"
 echo
 
@@ -19,22 +21,34 @@ echo
 # Organize parameters
 #
 
+if [ $# -lt 1 ]
+then
+    read -p "Lowercase plugin name (LCPLUGINNAME): " LCPLUGINNAME
+else
+    LCPLUGINNAME="$1"
+fi
+
+if [ $# -lt 2 ]
+then
+    read -p "Script directory (SCRIPTDIRNAME): " SCRIPTDIRNAME
+else
+    SCRIPTDIRNAME="$2"
+fi
+
 if [ $# -lt 3 ]
 then
-  echo "Too few arguments were supplied"
-  echo "Exiting"
-  exit 1
+    read -p "Web script directory (WEBSCRIPTDIRNAME): " WEBSCRIPTDIRNAME
+else
+    WEBSCRIPTDIRNAME="$3"
 fi
 
 if [ $# -gt 3 ]
 then
   echo "Too many arguments were supplied"
   echo "Ignoring extra arguments and continuing"
+  echo
 fi
 
-LCPLUGINNAME="$1"
-SCRIPTDIRNAME="$2"
-WEBSCRIPTDIRNAME="$3"
 XLPLUGINTEMPLATE="$(dirname $0)"
 
 echo "Plugin name:           $LCPLUGINNAME"
@@ -50,7 +64,7 @@ mkdir -p $LCPLUGINNAME/images
 
 #
 # Copy the mostly static root components
-# 
+#
 
 cp -R $XLPLUGINTEMPLATE/gradle $LCPLUGINNAME
 cp $XLPLUGINTEMPLATE/.gitignore $XLPLUGINTEMPLATE/.travis.yml $XLPLUGINTEMPLATE/build.gradle $XLPLUGINTEMPLATE/gradlew $XLPLUGINTEMPLATE/gradlew.bat $XLPLUGINTEMPLATE/License.md $LCPLUGINNAME
