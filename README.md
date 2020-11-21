@@ -6,10 +6,11 @@ This is a template that contains the directory structure, common files, and samp
 
 ## Usage
 
-Run the xl-configure-plugin-directory.sh script from whatever directory you want as the parent of your plugin directory.  This is typically your local github/xebialabs, github/xebialabs-community, or github/xebialabs-external directory.
+Run the new-xl-configure-plugin-directory.sh script from whatever directory you want to be the parent of your plugin directory.  This is typically your local github/xebialabs, github/xebialabs-community, or github/xebialabs-external directory.
 
-The command format is `<path>/configure-plugin-directory.sh LCPLUGINNAME SCRIPTDIRNAME WEBSCRIPTDIRNAME`  
+The command format is `<path>/new-configure-plugin-directory.sh XLPRODUCT LCPLUGINNAME SCRIPTDIRNAME WEBSCRIPTDIRNAME`  
 where  
+`XLPRODUCT`is xld or xlr.  This choice determines the tree structure.   
 `LCPLUGINNAME` is your plugin name.  It should be hyphenated lowercase, e.g., xl-my-demo-plugin.  
 `SCRIPTDIRNAME` is the resource namespace directory.  It should be camelcase, e.g., MyDemo.  
 `WEBSCRIPTDIRNAME` is the web namespace directory for custom UI panels or XL Release tiles.  It should be hyphenated lowercase, e.g., my-demo.
