@@ -137,5 +137,23 @@ then
         cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/js/template.js $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/js/$WEBSCRIPTDIRNAME.js
     fi
 fi
+
+if [ "$XLPRODUCT" == "xld" ]
+then
+    XLPRODUCTLONG1="xldeploy"
+    XLPRODUCTLONG2="XL Deploy"
+fi
+
+if [ "$XLPRODUCT" == "xlr" ]
+then
+    XLPRODUCTLONG1="xlrelease"
+    XLPRODUCTLONG2="XL Release"
+fi
+
+sed "s/LCPLUGINNAME/$LCPLUGINNAME/g" $XLPLUGINTEMPLATE/manifest-template.json > $LCPLUGINNAME/manifest-1.json
+sed "s/XLPRODUCTLONG1/$XLPRODUCTLONG1/g" $LCPLUGINNAME/manifest-1.json > $LCPLUGINNAME/manifest-2.json
+sed "s/XLPRODUCTLONG2/$XLPRODUCTLONG2/g" $LCPLUGINNAME/manifest-2.json > $LCPLUGINNAME/manifest.json
+rm $LCPLUGINNAME/manifest-1.json $LCPLUGINNAME/manifest-2.json
+
 echo "Complete"
 echo

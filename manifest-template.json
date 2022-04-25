@@ -1,0 +1,48 @@
+{
+  "id": {
+    "artifactId": "LCPLUGINNAME",
+    "groupId": "com.xebialabs.XLPRODUCTLONG1.plugins",
+    "version": "2.0.5"
+  },
+  "metadata": {
+	  "updatedDate": "2022-01-01",
+    "logo" : "https://raw.githubusercontent.com/xebialabs-community/LCPLUGINNAME/master/icon/LCPLUGINNAME.png",
+    "popularity":"3",
+    "rating" : "3",
+    "reviewed" : "10",
+    "capability": ["ADD CAPABILITY HERE"],
+    "categories": [
+      "ADD CATEGORY HERE"
+    ],
+    "description": "ADD DESCRIPTION HERE",
+    "features": [
+      "ADD FEATURES HERE"
+    ],
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/xebialabs-community/LCPLUGINNAME"
+      },
+      {
+        "name": "Documentation",
+        "url": "https://github.com/xebialabs-community/LCPLUGINNAME#readme"
+      }
+    ],
+    "maturity": "Mature",
+    "name": "LCPLUGINNAME",
+    "requirements": {
+      "product": "XLPRODUCTLONG2",
+      "versions": [
+        "== LATEST","NEXT LATEST","ETC"
+      ]
+    },
+    "screenshots": [
+    ],
+    "supportedBy": "Community",
+    "author": {
+        "author": [],
+        "Community": ["CSM"],
+        "Partner": []
+    }
+  }
+}
