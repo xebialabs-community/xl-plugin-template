@@ -2,7 +2,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
 //  id "scala"
-  id "com.github.hierynomus.license" version "0.14.0"
+  id "com.github.hierynomus.license" version "0.16.1"
   id "com.xebialabs.xldp" version "1.0.5"
   id 'nebula.release' version '11.0.0'
   id "com.xebialabs.xl.docker" version "1.1.0"
@@ -15,10 +15,11 @@ java {
     }
 }
 
-apply plugin: 'eclipse'
-apply plugin: 'idea'
+// apply plugin: 'eclipse'
+// apply plugin: 'idea'
+// apply plugin: 'maven'
+
 apply plugin: 'java'
-apply plugin: 'maven'
 
 repositories {
   mavenLocal()
@@ -46,9 +47,9 @@ version = "1.0.0"
 
 xlDocker {
   compileImage = 'xebialabs/xlr_dev_compile'
-  compileVersion = 'v8.5.0.1'
+  compileVersion = 'v23.1.0.1'
   runImage = 'xebialabs/xlr_dev_run'
-  runVersion = 'v8.5.0.1'
+  runVersion = 'v23.1.0.1'
   runPortMapping = '15516:5516'
 }
 
