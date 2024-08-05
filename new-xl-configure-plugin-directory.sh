@@ -12,6 +12,7 @@ echo "XLPRODUCT should be lowercase xld or xlr"
 echo "LCPLUGINNAME should be hyphenated lowercase, e.g., xl-my-demo-plugin"
 echo "SCRIPTDIRNAME should be camelcase, e.g., MyDemo"
 echo "WEBSCRIPTDIRNAME should be hyphenated lowercase, e.g., my-demo"
+echo "PYTHONCLIENTNAME should be snake case, e.g., My_Demo_Client"
 echo
 echo "Or, execute without arguments and enter responses at the prompts"
 echo
@@ -34,16 +35,17 @@ get-arguments-and-responses() {
 PROMPTS=("Enter lowercase product abbreviation, xl, xld, or xlr (XLPRODUCT)"
          "Enter lowercase plugin name (LCPLUGINNAME)"
          "Enter script directory name (SCRIPTDIRNAME)"
-         "Enter web script directory name (WEBSCRIPTDIRNAME)")
+         "Enter web script directory name (WEBSCRIPTDIRNAME)"
+         "Enter Python client name (PYTHONCLIENTNAME)")
 
-if [ $# -gt 4 ]
+if [ $# -gt 5 ]
 then
   echo "Too many arguments were supplied"
   echo "Ignoring extra arguments and continuing"
   echo
 fi
 
-for INDEX in 1 2 3 4
+for INDEX in 1 2 3 4 5
 do
   get-arguments-and-responses $# $INDEX $1
   shift
@@ -53,6 +55,7 @@ XLPRODUCT=$RESPONSE1
 LCPLUGINNAME=$RESPONSE2
 SCRIPTDIRNAME=$RESPONSE3
 WEBSCRIPTDIRNAME=$RESPONSE4
+PYTHONCLIENTNAME=$RESPONSE5
 
 XLPLUGINTEMPLATE="$(dirname $0)"
 
@@ -60,6 +63,7 @@ echo "Product:               $XLPRODUCT"
 echo "Plugin name:           $LCPLUGINNAME"
 echo "Script directory:      $SCRIPTDIRNAME"
 echo "Web script directory:  $WEBSCRIPTDIRNAME"
+echo "Python client name     $PYTHONCLIENTNAME"
 echo
 
 #
@@ -137,6 +141,39 @@ then
         cp $XLPLUGINTEMPLATE/src/main/resources/web/include/template-for-xlr-tile/js/template.js $LCPLUGINNAME/src/main/resources/web/include/$WEBSCRIPTDIRNAME/js/$WEBSCRIPTDIRNAME.js
     fi
 fi
+
+# Python client for XL Release
+if [ "$XLPRODUCT" = "xlr" ]
+then
+    if [ -z "$PYTHONCLIENTNAME" ]
+    then
+        echo "Omitting xlr Python client -- client name not supplied"
+    else
+        if [ -z $SCRIPTDIRNAME ]
+        then
+            echo "Omitting xlr Python client -- script dir name not supplied"
+        else
+            PYTHONCLIENTUTILNAME=${PYTHONCLIENTNAME}_Util
+            CLIENTFILENAME=$(echo ${PYTHONCLIENTNAME} | sed 's/_//g')
+            CLIENTUTILFILENAME=$(echo ${PYTHONCLIENTUTILNAME} | sed 's/_//g')
+            sed "s/Template_Client/$PYTHONCLIENTNAME/g" $XLPLUGINTEMPLATE/src/main/resources/template/templateclient.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTFILENAME}-1.py
+            sed "s/TemplateClient/$CLIENTFILENAME/g" $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTFILENAME}-1.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTFILENAME}.py
+            sed "s/Template_Client/$PYTHONCLIENTNAME/g" $XLPLUGINTEMPLATE/src/main/resources/template/templateclientutil.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-1.py
+            sed "s/Template_Client_Util/$$PYTHONCLIENTUTILNAME/g" $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-1.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-2.py
+            sed "s/template\.TemplateClient/$SCRIPTDIRNAME\.$CLIENTFILENAME/g" $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-2.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-3.py
+            sed "s/TemplateClientUtil/$CLIENTUTILFILENAME/g" $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}-3.py > $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/${CLIENTUTILFILENAME}.py
+            cp "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/template.py" "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/__init__.py"
+            cp "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/template.py" "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            echo "import $SCRIPTDIRNAME.$CLIENTUTILFILENAME" >> "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            echo "reload($SCRIPTDIRNAME.$CLIENTUTILFILENAME)" >> "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            echo "from $SCRIPTDIRNAME.$CLIENTUTILFILENAME import $PYTHONCLIENTUTILNAME" >> "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            echo "" >> "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            echo "client = $PYTHONCLIENTUTILNAME.create_client()" >> "$LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/Task.py"
+            rm $LCPLUGINNAME/src/main/resources/$SCRIPTDIRNAME/*-[123]\.py
+       fi
+    fi
+fi
+
 
 if [ "$XLPRODUCT" == "xld" ]
 then

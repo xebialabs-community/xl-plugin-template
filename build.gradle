@@ -8,10 +8,10 @@ plugins {
   id "com.xebialabs.xl.docker" version "1.1.0"
 }
 
-// For Java 11
+// For Java 17
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -33,9 +33,9 @@ def apiVersion = "2018.6.5"
 
 dependencies {
 //  implementation "org.scala-lang:scala-library:2.13.4"
-  compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
-  compile "org.slf4j:slf4j-api:1.7.25"
-  compile files('/path/to/local/file1.jar',
+  implementation "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
+  implementation "org.slf4j:slf4j-api:1.7.25"
+  implementation files('/path/to/local/file1.jar',
                 '/path/to/local/file2.jar',
                 '/path/to/local/file3.jar')
 }
@@ -47,9 +47,9 @@ version = "1.0.0"
 
 xlDocker {
   compileImage = 'xebialabs/xlr_dev_compile'
-  compileVersion = 'v23.1.0.1'
+  compileVersion = 'v24.1.2.1'
   runImage = 'xebialabs/xlr_dev_run'
-  runVersion = 'v23.1.0.1'
+  runVersion = 'v24.1.2.1'
   runPortMapping = '15516:5516'
 }
 

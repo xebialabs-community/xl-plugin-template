@@ -8,3 +8,13 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+import template.TemplateClient
+# reload(template.TemplateClient)
+from template.TemplateClient import Template_Client
+
+class Template_Client_Util(object):
+
+    @staticmethod
+    def create_client():
+        logger.debug("Executing method create_client() in class Template_Client_Util in file TemplateClientUtil.py")
+        return Template_Client.create_client()
