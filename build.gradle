@@ -2,6 +2,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
 //  id "scala"
+  id "java"
   id "com.github.hierynomus.license" version "0.16.1"
   id "com.xebialabs.xldp" version "1.0.5"
   id 'nebula.release' version '11.0.0'
@@ -19,8 +20,6 @@ java {
 // apply plugin: 'idea'
 // apply plugin: 'maven'
 
-apply plugin: 'java'
-
 repositories {
   mavenLocal()
   mavenCentral()
@@ -29,12 +28,12 @@ repositories {
   }
 }
 
-def apiVersion = "2018.6.5"
+def apiVersion = "24.1.0"
 
 dependencies {
-//  implementation "org.scala-lang:scala-library:2.13.4"
+//  implementation "org.scala-lang:scala-library:2.13.12"
   implementation "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
-  implementation "org.slf4j:slf4j-api:1.7.25"
+  implementation "org.slf4j:slf4j-api:2.0.12"
   implementation files('/path/to/local/file1.jar',
                 '/path/to/local/file2.jar',
                 '/path/to/local/file3.jar')
